@@ -11,7 +11,12 @@
         {
             "name": "Baptiste",
             "email": "baptiste@dark-matter.fr",
-            "role": "Developer"
+            "role": "Original Maintainer"
+        },
+        {
+            "name": "Fatrex",
+            "email": "fatrex@postee.dev",
+            "role": "Maintainer"
         }
     ],
     "require": {
@@ -25,7 +30,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Croustibat\\FilamentJobsMonitor\\": "src"
+            "Fatrex\\FilamentJobsMonitor\\": "src"
         }
     },
     "scripts": {
@@ -40,11 +45,11 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Croustibat\\FilamentJobsMonitor\\FilamentJobsMonitorServiceProvider",
-                "Croustibat\\FilamentJobsMonitor\\QueueMonitorProvider"
+                "Fatrex\\FilamentJobsMonitor\\FilamentJobsMonitorServiceProvider",
+                "Fatrex\\FilamentJobsMonitor\\QueueMonitorProvider"
             ],
             "aliases": {
-                "QueueMonitor": "Croustibat\\FilamentJobsMonitor\\QueueMonitorProvider\\Facade"
+                "QueueMonitor": "Fatrex\\FilamentJobsMonitor\\QueueMonitorProvider\\Facade"
             }
         }
     },

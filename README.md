@@ -5,8 +5,8 @@
 
 This is a package to monitor background jobs for FilamentPHP (v4). It is inspired by Laravel Horizon and is compatible with all drivers.
 
-<img width="800" alt="Screenshot 2023-09-13 at 23 18 44" src="https://github.com/croustibat/filament-jobs-monitor/assets/1169456/a5d5a088-865f-4265-bd37-13dce213f529">
-<img width="800" alt="Screenshot 2023-09-13 at 23 18 23" src="https://github.com/croustibat/filament-jobs-monitor/assets/1169456/e0a7730e-f459-4d99-8a40-5f35337385eb">
+<img width="800" alt="Screenshot 2023-09-13 at 23 18 44" src="https://github.com/fatrex/filament-jobs-monitor/assets/1169456/a5d5a088-865f-4265-bd37-13dce213f529">
+<img width="800" alt="Screenshot 2023-09-13 at 23 18 23" src="https://github.com/fatrex/filament-jobs-monitor/assets/1169456/e0a7730e-f459-4d99-8a40-5f35337385eb">
 
 ## Installation
 
@@ -91,9 +91,9 @@ Then you can extend the model by adding your own methods :
 
     namespace App\Models;
 
-    use \Croustibat\FilamentJobsMonitor\Models\QueueMonitor as CroustibatQueueMonitor;
+    use \Fatrex\FilamentJobsMonitor\Models\QueueMonitor as FatrexQueueMonitor;
 
-    class MyQueueMonitor extends CroustibatQueueMonitor {}
+    class MyQueueMonitor extends FatrexQueueMonitor {}
 
 ```
 
@@ -107,7 +107,7 @@ For example in your `app/Providers/Filament/AdminPanelProvider.php` file:
 <?php
 
 
-use \Croustibat\FilamentJobsMonitor\FilamentJobsMonitorPlugin;
+use \Fatrex\FilamentJobsMonitor\FilamentJobsMonitorPlugin;
 
 ...
 

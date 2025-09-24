@@ -1,6 +1,6 @@
 <?php
 
-namespace Croustibat\FilamentJobsMonitor;
+namespace Fatrex\FilamentJobsMonitor;
 
 use Closure;
 use Filament\Contracts\Plugin;

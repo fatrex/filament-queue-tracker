@@ -1,8 +1,8 @@
 <?php
 
-namespace Croustibat\FilamentJobsMonitor\Models;
+namespace Fatrex\FilamentJobsMonitor\Models;
 
-use Croustibat\FilamentJobsMonitor\FilamentJobsMonitorPlugin;
+use Fatrex\FilamentJobsMonitor\FilamentJobsMonitorPlugin;
 use Illuminate\Contracts\Queue\Job as JobContract;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Casts\Attribute;

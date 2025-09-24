@@ -1,11 +1,11 @@
 <?php
 
-namespace Croustibat\FilamentJobsMonitor\Resources;
+namespace Fatrex\FilamentJobsMonitor\Resources;
 
-use Croustibat\FilamentJobsMonitor\FilamentJobsMonitorPlugin;
-use Croustibat\FilamentJobsMonitor\Models\QueueMonitor;
-use Croustibat\FilamentJobsMonitor\Resources\QueueMonitorResource\Pages\ListQueueMonitors;
-use Croustibat\FilamentJobsMonitor\Resources\QueueMonitorResource\Widgets\QueueStatsOverview;
+use Fatrex\FilamentJobsMonitor\FilamentJobsMonitorPlugin;
+use Fatrex\FilamentJobsMonitor\Models\QueueMonitor;
+use Fatrex\FilamentJobsMonitor\Resources\QueueMonitorResource\Pages\ListQueueMonitors;
+use Fatrex\FilamentJobsMonitor\Resources\QueueMonitorResource\Widgets\QueueStatsOverview;
 use Filament\Forms\Components\DateTimePicker;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;

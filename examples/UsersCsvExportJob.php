@@ -2,7 +2,7 @@
 
 namespace App\Jobs;
 
-use Croustibat\FilamentJobsMonitor\Traits\QueueProgress;
+use Fatrex\FilamentJobsMonitor\Traits\QueueProgress;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Database\Eloquent\Collection;

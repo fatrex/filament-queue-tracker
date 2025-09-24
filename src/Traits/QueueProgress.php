@@ -1,8 +1,8 @@
 <?php
 
-namespace Croustibat\FilamentJobsMonitor\Traits;
+namespace Fatrex\FilamentJobsMonitor\Traits;
 
-use Croustibat\FilamentJobsMonitor\Models\QueueMonitor;
+use Fatrex\FilamentJobsMonitor\Models\QueueMonitor;
 
 trait QueueProgress
 {
