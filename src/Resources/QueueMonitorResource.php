@@ -52,34 +52,34 @@ class QueueMonitorResource extends Resource
             ->columns([
                 TextColumn::make('status')
                     ->badge()
-                    ->label(__('filament-jobs-monitor::translations.status'))
-                    ->formatStateUsing(fn (string $state): string => __("filament-jobs-monitor::translations.{$state}"))
+                    ->label(__('filament-queue-tracker::translations.status'))
+                    ->formatStateUsing(fn (string $state): string => __("filament-queue-tracker::translations.{$state}"))
                     ->color(fn (string $state): string => match ($state) {
                         'running' => 'primary',
                         'succeeded' => 'success',
                         'failed' => 'danger',
                     }),
                 TextColumn::make('name')
-                    ->label(__('filament-jobs-monitor::translations.name'))
+                    ->label(__('filament-queue-tracker::translations.name'))
                     ->sortable(),
                 TextColumn::make('queue')
-                    ->label(__('filament-jobs-monitor::translations.queue'))
+                    ->label(__('filament-queue-tracker::translations.queue'))
                     ->sortable(),
                 TextColumn::make('progress')
-                    ->label(__('filament-jobs-monitor::translations.progress'))
+                    ->label(__('filament-queue-tracker::translations.progress'))
                     ->formatStateUsing(fn (string $state) => "{$state}%")
                     ->sortable(),
                 TextColumn::make('started_at')
-                    ->label(__('filament-jobs-monitor::translations.started_at'))
+                    ->label(__('filament-queue-tracker::translations.started_at'))
                     ->since()
                     ->sortable(),
             ])
             ->defaultSort('started_at', 'desc')
             ->recordActions([
                 Action::make('details')
-                    ->label(__('filament-jobs-monitor::translations.details'))
+                    ->label(__('filament-queue-tracker::translations.details'))
                     ->icon('heroicon-o-information-circle')
-                    ->modalContent(fn (QueueMonitor $queueMonitor) => view('filament-jobs-monitor::queue-monitor-details', [
+                    ->modalContent(fn (QueueMonitor $queueMonitor) => view('filament-queue-tracker::queue-monitor-details', [
                         'exception_message' => $queueMonitor->exception_message,
                         'failed' => $queueMonitor->failed,
                         'attempts' => $queueMonitor->attempt,
@@ -91,11 +91,11 @@ class QueueMonitorResource extends Resource
             ])
             ->filters([
                 SelectFilter::make('status')
-                    ->label(__('filament-jobs-monitor::translations.status'))
+                    ->label(__('filament-queue-tracker::translations.status'))
                     ->options([
-                        'running' => __('filament-jobs-monitor::translations.running'),
-                        'succeeded' => __('filament-jobs-monitor::translations.succeeded'),
-                        'failed' => __('filament-jobs-monitor::translations.failed'),
+                        'running' => __('filament-queue-tracker::translations.running'),
+                        'succeeded' => __('filament-queue-tracker::translations.succeeded'),
+                        'failed' => __('filament-queue-tracker::translations.failed'),
                     ])
                     ->query(function (Builder $query, $state): Builder {
                         $value = $state['value'];
@@ -139,7 +139,7 @@ class QueueMonitorResource extends Resource
 
     public static function getCluster(): ?string
     {
-        return config('filament-jobs-monitor.resources.cluster');
+        return config('filament-queue-tracker.resources.cluster');
     }
 
     public static function getNavigationGroup(): ?string

@@ -1,12 +1,12 @@
 # Background Jobs monitoring like Horizon for all drivers for FilamentPHP
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/fatrex/filament-jobs-monitor.svg?style=flat-square)](https://packagist.org/packages/fatrex/filament-jobs-monitor)
-[![Total Downloads](https://img.shields.io/packagist/dt/fatrex/filament-jobs-monitor.svg?style=flat-square)](https://packagist.org/packages/fatrex/filament-jobs-monitor)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/fatrex/filament-queue-tracker.svg?style=flat-square)](https://packagist.org/packages/fatrex/filament-queue-tracker)
+[![Total Downloads](https://img.shields.io/packagist/dt/fatrex/filament-queue-tracker.svg?style=flat-square)](https://packagist.org/packages/fatrex/filament-queue-tracker)
 
 This is a package to monitor background jobs for FilamentPHP (v4). It is inspired by Laravel Horizon and is compatible with all drivers.
 
-<img width="800" alt="Screenshot 2023-09-13 at 23 18 44" src="https://github.com/fatrex/filament-jobs-monitor/assets/1169456/a5d5a088-865f-4265-bd37-13dce213f529">
-<img width="800" alt="Screenshot 2023-09-13 at 23 18 23" src="https://github.com/fatrex/filament-jobs-monitor/assets/1169456/e0a7730e-f459-4d99-8a40-5f35337385eb">
+<img width="800" alt="Screenshot 2023-09-13 at 23 18 44" src="https://github.com/fatrex/filament-queue-tracker/assets/1169456/a5d5a088-865f-4265-bd37-13dce213f529">
+<img width="800" alt="Screenshot 2023-09-13 at 23 18 23" src="https://github.com/fatrex/filament-queue-tracker/assets/1169456/e0a7730e-f459-4d99-8a40-5f35337385eb">
 
 ## Installation
 
@@ -29,13 +29,13 @@ See [CHANGELOG.md](./CHANGELOG.md) for local changes in this fork (v4-only).
 Install the package via composer:
 
 ```bash
-composer require fatrex/filament-jobs-monitor
+composer require fatrex/filament-queue-tracker
 ```
 
 Publish and run the migrations using:
 
 ```bash
-php artisan vendor:publish --tag="filament-jobs-monitor-migrations"
+php artisan vendor:publish --tag="filament-queue-tracker-migrations"
 php artisan migrate
 ```
 
@@ -46,7 +46,7 @@ php artisan migrate
 The global plugin config can be published using the command below:
 
 ```bash
-php artisan vendor:publish --tag="filament-jobs-monitor-config"
+php artisan vendor:publish --tag="filament-queue-tracker-config"
 ```
 
 This is the content of the published config file:
@@ -61,7 +61,7 @@ return [
         'navigation_icon' => 'heroicon-o-cpu-chip',
         'navigation_sort' => null,
         'navigation_count_badge' => false,
-        'resource' => Croustibat\FilamentJobsMonitor\Resources\QueueMonitorResource::class,
+        'resource' => Croustibat\FilamentQueueTracker\Resources\QueueMonitorResource::class,
     ],
     'pruning' => [
         'enabled' => true,
@@ -91,7 +91,7 @@ Then you can extend the model by adding your own methods :
 
     namespace App\Models;
 
-    use \Fatrex\FilamentJobsMonitor\Models\QueueMonitor as FatrexQueueMonitor;
+    use \Fatrex\FilamentQueueTracker\Models\QueueMonitor as FatrexQueueMonitor;
 
     class MyQueueMonitor extends FatrexQueueMonitor {}
 
@@ -107,7 +107,7 @@ For example in your `app/Providers/Filament/AdminPanelProvider.php` file:
 <?php
 
 
-use \Fatrex\FilamentJobsMonitor\FilamentJobsMonitorPlugin;
+use \Fatrex\FilamentQueueTracker\FilamentQueueTrackerPlugin;
 
 ...
 
@@ -115,7 +115,7 @@ public function panel(Panel $panel): Panel
 {
     return $panel
         ->plugins([
-            FilamentJobsMonitorPlugin::make()
+            FilamentQueueTrackerPlugin::make()
         ]);
 }
 ```
@@ -163,7 +163,7 @@ Then you can call your Job with the following code:
         // AdminPanelProvider.php
         ->plugins([
             // ...
-            FilamentJobsMonitorPlugin::make()
+            FilamentQueueTrackerPlugin::make()
                 ->enableNavigation(),
         ])
 ```
@@ -175,7 +175,7 @@ Or you can use a closure to enable navigation only for specific users:
         // AdminPanelProvider.php
         ->plugins([
             // ...
-            FilamentJobsMonitorPlugin::make()
+            FilamentQueueTrackerPlugin::make()
                 ->enableNavigation(
                     fn () => auth()->user()->can('view_queue_job') || auth()->user()->can('view_any_queue_job)'),
                 ),

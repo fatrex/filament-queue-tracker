@@ -33,7 +33,7 @@ class TestCase extends Orchestra
         config()->set('database.default', 'testing');
 
         /*
-        $migration = include __DIR__.'/../database/migrations/create_filament-jobs-monitor_table.php.stub';
+        $migration = include __DIR__.'/../database/migrations/create_filament-queue-tracker_table.php.stub';
         $migration->up();
         */
     }

@@ -24,6 +24,6 @@ class ListQueueMonitors extends ListRecords
 
     public function getTitle(): string
     {
-        return __('filament-jobs-monitor::translations.title');
+        return __('filament-queue-tracker::translations.title');
     }
 }

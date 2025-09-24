@@ -18,6 +18,6 @@ class FilamentQueueTrackerServiceProvider extends PackageServiceProvider
             // config file to config/filament-queue-tracker.php in your repo.
             ->hasConfigFile('filament-queue-tracker')
             ->hasTranslations()
-            ->hasMigration('create_filament-jobs-monitor_table');
+            ->hasMigration('create_filament-queue-tracker_table');
     }
 }
