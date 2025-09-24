@@ -61,7 +61,7 @@ return [
         'navigation_icon' => 'heroicon-o-cpu-chip',
         'navigation_sort' => null,
         'navigation_count_badge' => false,
-        'resource' => Croustibat\FilamentQueueTracker\Resources\QueueMonitorResource::class,
+        'resource' => Fatrex\FilamentQueueTracker\Resources\QueueMonitorResource::class,
     ],
     'pruning' => [
         'enabled' => true,
@@ -159,7 +159,7 @@ Then you can call your Job with the following code:
 ### Enabling navigation
 
 
-````php
+```php
         // AdminPanelProvider.php
         ->plugins([
             // ...
