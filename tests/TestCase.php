@@ -1,8 +1,8 @@
 <?php
 
-namespace Fatrex\FilamentJobsMonitor\Tests;
+namespace Fatrex\FilamentQueueTracker\Tests;
 
-use Fatrex\FilamentJobsMonitor\FilamentJobsMonitorServiceProvider;
+use Fatrex\FilamentQueueTracker\FilamentQueueTrackerServiceProvider;
 use Filament\FilamentServiceProvider;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Livewire\LivewireServiceProvider;
@@ -15,7 +15,7 @@ class TestCase extends Orchestra
         parent::setUp();
 
         Factory::guessFactoryNamesUsing(
-            fn (string $modelName) => 'Fatrex\\FilamentJobsMonitor\\Database\\Factories\\'.class_basename($modelName).'Factory'
+            fn (string $modelName) => 'Fatrex\\FilamentQueueTracker\\Database\\Factories\\'.class_basename($modelName).'Factory'
         );
     }
 
@@ -24,7 +24,7 @@ class TestCase extends Orchestra
         return [
             LivewireServiceProvider::class,
             FilamentServiceProvider::class,
-            FilamentJobsMonitorServiceProvider::class,
+            FilamentQueueTrackerServiceProvider::class,
         ];
     }
 

@@ -1,5 +1,5 @@
 <?php
 
-use Fatrex\FilamentJobsMonitor\Tests\TestCase;
+use Fatrex\FilamentQueueTracker\Tests\TestCase;
 
 uses(TestCase::class)->in(__DIR__);

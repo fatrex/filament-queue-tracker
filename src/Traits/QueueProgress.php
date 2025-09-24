@@ -1,8 +1,8 @@
 <?php
 
-namespace Fatrex\FilamentJobsMonitor\Traits;
+namespace Fatrex\FilamentQueueTracker\Traits;
 
-use Fatrex\FilamentJobsMonitor\Models\QueueMonitor;
+use Fatrex\FilamentQueueTracker\Models\QueueMonitor;
 
 trait QueueProgress
 {

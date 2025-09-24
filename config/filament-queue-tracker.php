@@ -9,7 +9,7 @@ return [
         'navigation_icon' => 'heroicon-o-cpu-chip',
         'navigation_sort' => null,
         'navigation_count_badge' => false,
-        'resource' => Fatrex\FilamentJobsMonitor\Resources\QueueMonitorResource::class,
+        'resource' => Fatrex\FilamentQueueTracker\Resources\QueueMonitorResource::class,
         'cluster' => null,
     ],
     'pruning' => [

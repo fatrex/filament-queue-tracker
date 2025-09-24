@@ -1,11 +1,11 @@
 <?php
 
-namespace Fatrex\FilamentJobsMonitor\Resources;
+namespace Fatrex\FilamentQueueTracker\Resources;
 
-use Fatrex\FilamentJobsMonitor\FilamentJobsMonitorPlugin;
-use Fatrex\FilamentJobsMonitor\Models\QueueMonitor;
-use Fatrex\FilamentJobsMonitor\Resources\QueueMonitorResource\Pages\ListQueueMonitors;
-use Fatrex\FilamentJobsMonitor\Resources\QueueMonitorResource\Widgets\QueueStatsOverview;
+use Fatrex\FilamentQueueTracker\FilamentQueueTrackerPlugin;
+use Fatrex\FilamentQueueTracker\Models\QueueMonitor;
+use Fatrex\FilamentQueueTracker\Resources\QueueMonitorResource\Pages\ListQueueMonitors;
+use Fatrex\FilamentQueueTracker\Resources\QueueMonitorResource\Widgets\QueueStatsOverview;
 use Filament\Forms\Components\DateTimePicker;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
@@ -119,17 +119,17 @@ class QueueMonitorResource extends Resource
 
     public static function getNavigationBadge(): ?string
     {
-        return FilamentJobsMonitorPlugin::get()->getNavigationCountBadge() ? number_format(static::getModel()::count()) : null;
+        return FilamentQueueTrackerPlugin::get()->getNavigationCountBadge() ? number_format(static::getModel()::count()) : null;
     }
 
     public static function getModelLabel(): string
     {
-        return FilamentJobsMonitorPlugin::get()->getLabel();
+        return FilamentQueueTrackerPlugin::get()->getLabel();
     }
 
     public static function getPluralModelLabel(): string
     {
-        return FilamentJobsMonitorPlugin::get()->getPluralLabel();
+        return FilamentQueueTrackerPlugin::get()->getPluralLabel();
     }
 
     public static function getNavigationLabel(): string
@@ -144,27 +144,27 @@ class QueueMonitorResource extends Resource
 
     public static function getNavigationGroup(): ?string
     {
-        return FilamentJobsMonitorPlugin::get()->getNavigationGroup();
+        return FilamentQueueTrackerPlugin::get()->getNavigationGroup();
     }
 
     public static function getNavigationSort(): ?int
     {
-        return FilamentJobsMonitorPlugin::get()->getNavigationSort();
+        return FilamentQueueTrackerPlugin::get()->getNavigationSort();
     }
 
     public static function getBreadcrumb(): string
     {
-        return FilamentJobsMonitorPlugin::get()->getBreadcrumb();
+        return FilamentQueueTrackerPlugin::get()->getBreadcrumb();
     }
 
     public static function shouldRegisterNavigation(): bool
     {
-        return FilamentJobsMonitorPlugin::get()->shouldRegisterNavigation();
+        return FilamentQueueTrackerPlugin::get()->shouldRegisterNavigation();
     }
 
     public static function getNavigationIcon(): string
     {
-        return FilamentJobsMonitorPlugin::get()->getNavigationIcon();
+        return FilamentQueueTrackerPlugin::get()->getNavigationIcon();
     }
 
     public static function getPages(): array

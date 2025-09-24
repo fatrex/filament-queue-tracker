@@ -1,9 +1,9 @@
 <?php
 
-namespace Fatrex\FilamentJobsMonitor\Resources\QueueMonitorResource\Pages;
+namespace Fatrex\FilamentQueueTracker\Resources\QueueMonitorResource\Pages;
 
-use Fatrex\FilamentJobsMonitor\Resources\QueueMonitorResource;
-use Fatrex\FilamentJobsMonitor\Resources\QueueMonitorResource\Widgets\QueueStatsOverview;
+use Fatrex\FilamentQueueTracker\Resources\QueueMonitorResource;
+use Fatrex\FilamentQueueTracker\Resources\QueueMonitorResource\Widgets\QueueStatsOverview;
 use Filament\Resources\Pages\ListRecords;
 
 class ListQueueMonitors extends ListRecords

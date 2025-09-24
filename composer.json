@@ -1,11 +1,11 @@
 {
-    "name": "fatrex/filament-jobs-monitor",
+    "name": "fatrex/filament-queue-tracker",
     "description": "Background Jobs monitoring like Horizon for all drivers for Filament (v4)",
     "keywords": [
         "laravel",
-        "filament-jobs-monitor"
+        "filament-queue-tracker"
     ],
-    "homepage": "https://github.com/fatrex/filament-jobs-monitor",
+    "homepage": "https://github.com/fatrex/filament-queue-tracker",
     "license": "MIT",
     "authors": [
         {
@@ -30,7 +30,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Fatrex\\FilamentJobsMonitor\\": "src"
+            "Fatrex\\FilamentQueueTracker\\": "src"
         }
     },
     "scripts": {
@@ -45,11 +45,11 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Fatrex\\FilamentJobsMonitor\\FilamentJobsMonitorServiceProvider",
-                "Fatrex\\FilamentJobsMonitor\\QueueMonitorProvider"
+                "Fatrex\\FilamentQueueTracker\\FilamentQueueTrackerServiceProvider",
+                "Fatrex\\FilamentQueueTracker\\QueueTrackerProvider"
             ],
             "aliases": {
-                "QueueMonitor": "Fatrex\\FilamentJobsMonitor\\QueueMonitorProvider\\Facade"
+                "QueueTracker": "Fatrex\\FilamentQueueTracker\\QueueTrackerProvider\\Facade"
             }
         }
     },

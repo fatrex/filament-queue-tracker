@@ -1,8 +1,8 @@
 <?php
 
-namespace Fatrex\FilamentJobsMonitor\Models;
+namespace Fatrex\FilamentQueueTracker\Models;
 
-use Fatrex\FilamentJobsMonitor\FilamentJobsMonitorPlugin;
+use Fatrex\FilamentQueueTracker\FilamentQueueTrackerPlugin;
 use Illuminate\Contracts\Queue\Job as JobContract;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Casts\Attribute;
@@ -101,8 +101,8 @@ class QueueMonitor extends Model
      */
     public function prunable(): Builder|bool
     {
-        if (FilamentJobsMonitorPlugin::get()->getPruning()) {
-            return static::where('created_at', '<=', now()->subDays(FilamentJobsMonitorPlugin::get()->getPruningRetention()));
+        if (FilamentQueueTrackerPlugin::get()->getPruning()) {
+            return static::where('created_at', '<=', now()->subDays(FilamentQueueTrackerPlugin::get()->getPruningRetention()));
         }
 
         return false;

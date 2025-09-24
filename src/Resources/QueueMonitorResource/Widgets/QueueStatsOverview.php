@@ -1,8 +1,8 @@
 <?php
 
-namespace Fatrex\FilamentJobsMonitor\Resources\QueueMonitorResource\Widgets;
+namespace Fatrex\FilamentQueueTracker\Resources\QueueMonitorResource\Widgets;
 
-use Fatrex\FilamentJobsMonitor\Models\QueueMonitor;
+use Fatrex\FilamentQueueTracker\Models\QueueMonitor;
 use Filament\Widgets\StatsOverviewWidget as BaseWidget;
 use Filament\Widgets\StatsOverviewWidget\Stat;
 use Illuminate\Support\Facades\DB;

@@ -1,13 +1,12 @@
 <?php
 
-namespace Fatrex\FilamentJobsMonitor;
+namespace Fatrex\FilamentQueueTracker;
 
 use Closure;
 use Filament\Contracts\Plugin;
-use Filament\Panel;
 use Filament\Support\Concerns\EvaluatesClosures;
 
-class FilamentJobsMonitorPlugin implements Plugin
+class FilamentQueueTrackerPlugin implements Plugin
 {
     use EvaluatesClosures;
 
@@ -71,7 +70,7 @@ class FilamentJobsMonitorPlugin implements Plugin
      */
     public function getId(): string
     {
-        return 'filament-jobs-monitor';
+        return 'filament-queue-tracker';
     }
 
     /**
@@ -113,7 +112,7 @@ class FilamentJobsMonitorPlugin implements Plugin
      */
     public function getResource(): string
     {
-        return $this->resource ?? config('filament-jobs-monitor.resources.resource');
+        return $this->resource ?? config('filament-queue-tracker.resources.resource');
     }
 
     /**
@@ -131,7 +130,7 @@ class FilamentJobsMonitorPlugin implements Plugin
      */
     public function getLabel(): ?string
     {
-        return $this->evaluate($this->label) ?? config('filament-jobs-monitor.resources.label');
+        return $this->evaluate($this->label) ?? config('filament-queue-tracker.resources.label');
     }
 
     /**
@@ -149,7 +148,7 @@ class FilamentJobsMonitorPlugin implements Plugin
      */
     public function getPluralLabel(): ?string
     {
-        return $this->evaluate($this->pluralLabel) ?? config('filament-jobs-monitor.resources.plural_label');
+        return $this->evaluate($this->pluralLabel) ?? config('filament-queue-tracker.resources.plural_label');
     }
 
     /**
@@ -167,7 +166,7 @@ class FilamentJobsMonitorPlugin implements Plugin
      */
     public function getClusterName(): ?string
     {
-        return config('filament-jobs-monitor.resources.cluster');
+        return config('filament-queue-tracker.resources.cluster');
     }
 
     /**
@@ -175,7 +174,7 @@ class FilamentJobsMonitorPlugin implements Plugin
      */
     public function getNavigationGroup(): ?string
     {
-        return $this->evaluate($this->navigationGroup) ?? config('filament-jobs-monitor.resources.navigation_group');
+        return $this->evaluate($this->navigationGroup) ?? config('filament-queue-tracker.resources.navigation_group');
     }
 
     /**
@@ -193,7 +192,7 @@ class FilamentJobsMonitorPlugin implements Plugin
      */
     public function getNavigationIcon(): ?string
     {
-        return $this->navigationIcon ?? config('filament-jobs-monitor.resources.navigation_icon');
+        return $this->navigationIcon ?? config('filament-queue-tracker.resources.navigation_icon');
     }
 
     /**
@@ -211,7 +210,7 @@ class FilamentJobsMonitorPlugin implements Plugin
      */
     public function getNavigationSort(): ?int
     {
-        return $this->navigationSort ?? config('filament-jobs-monitor.resources.navigation_sort');
+        return $this->navigationSort ?? config('filament-queue-tracker.resources.navigation_sort');
     }
 
     /**
@@ -229,7 +228,7 @@ class FilamentJobsMonitorPlugin implements Plugin
      */
     public function getNavigationCountBadge(): ?bool
     {
-        return $this->navigationCountBadge ?? config('filament-jobs-monitor.resources.navigation_count_badge');
+        return $this->navigationCountBadge ?? config('filament-queue-tracker.resources.navigation_count_badge');
     }
 
     /**
@@ -247,7 +246,7 @@ class FilamentJobsMonitorPlugin implements Plugin
      */
     public function shouldRegisterNavigation(): bool
     {
-        return (($this->evaluate($this->navigation)) ?? config('filament-jobs-monitor.resources.enabled')) === true ;
+        return (($this->evaluate($this->navigation)) ?? config('filament-queue-tracker.resources.enabled')) === true ;
     }
 
     /**
@@ -265,7 +264,7 @@ class FilamentJobsMonitorPlugin implements Plugin
      */
     public function getPruning(): ?bool
     {
-        return $this->pruning ?? config('filament-jobs-monitor.pruning.enabled');
+        return $this->pruning ?? config('filament-queue-tracker.pruning.enabled');
     }
 
     /**
@@ -283,7 +282,7 @@ class FilamentJobsMonitorPlugin implements Plugin
      */
     public function getPruningRetention(): ?int
     {
-        return $this->pruningRetention ?? config('filament-jobs-monitor.pruning.retention_days');
+        return $this->pruningRetention ?? config('filament-queue-tracker.pruning.retention_days');
     }
 
     /**
@@ -301,6 +300,6 @@ class FilamentJobsMonitorPlugin implements Plugin
      */
     public function getBreadcrumb(): string
     {
-        return __('filament-jobs-monitor::translations.breadcrumb');
+        return __('filament-queue-tracker::translations.breadcrumb');
     }
 }

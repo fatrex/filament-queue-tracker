@@ -1,6 +1,6 @@
 # Changelog
 
-All notable changes to `filament-jobs-monitor` will be documented in this file.
+All notable changes to `filament-queue-tracker` will be documented in this file.
 
 ## 3.0.0 - 2025-09-24
 
@@ -10,7 +10,7 @@ All notable changes to `filament-jobs-monitor` will be documented in this file.
 - Update table actions to use `Filament\\Actions\\Action` and register via `recordActions()` / `toolbarActions()`.
 - Update stats widget to v4 (`getStats()` method name).
 - Update `SelectFilter` callback to v4 signature/state handling.
-- Fix `FilamentJobsMonitorPlugin::shouldRegisterNavigation()` fallback to respect config.
+- Fix `FilamentQueueTrackerPlugin::shouldRegisterNavigation()` fallback to respect config.
 - Documentation: README updated for v4-only, install command, and note for v3 users pointing to the original library.
 
 ### Migration notes

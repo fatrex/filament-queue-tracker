@@ -1,8 +1,8 @@
 <?php
 
-namespace Fatrex\FilamentJobsMonitor;
+namespace Fatrex\FilamentQueueTracker;
 
-use Fatrex\FilamentJobsMonitor\Models\QueueMonitor;
+use Fatrex\FilamentQueueTracker\Models\QueueMonitor;
 use Illuminate\Contracts\Queue\Job as JobContract;
 use Illuminate\Queue\Events\JobExceptionOccurred;
 use Illuminate\Queue\Events\JobFailed;
@@ -11,7 +11,7 @@ use Illuminate\Queue\Events\JobProcessing;
 use Illuminate\Support\Facades\Queue;
 use Illuminate\Support\ServiceProvider;
 
-class QueueMonitorProvider extends ServiceProvider
+class QueueTrackerProvider extends ServiceProvider
 {
     /**
      * Bootstrap services.
