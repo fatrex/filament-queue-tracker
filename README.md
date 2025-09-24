@@ -16,6 +16,10 @@ Check your FilamentPHP version before installing:
 | ------- | ----------- |--------|
 | 3.*     | 4.*         | >= 8.1 |
 
+> Acknowledgements & Filament v3 users
+>
+> Huge thanks to the original creator and maintainer, [Croustibat](https://github.com/croustibat). This package now targets Filament v4 only. If you need Filament v3 support, please use the original library: [croustibat/filament-jobs-monitor](https://github.com/croustibat/filament-jobs-monitor) (v2.*).
+
 Install the package via composer:
 
 ```bash
