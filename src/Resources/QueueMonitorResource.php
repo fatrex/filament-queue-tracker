@@ -10,10 +10,10 @@ use Filament\Forms\Components\DateTimePicker;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
-use Filament\Forms\Form;
+use Filament\Schemas\Schema;
 use Filament\Resources\Resource;
-use Filament\Tables\Actions\Action as FilamentTableAction;
-use Filament\Tables\Actions\DeleteBulkAction;
+use Filament\Actions\Action;
+use Filament\Actions\DeleteBulkAction;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Table;
@@ -24,9 +24,9 @@ class QueueMonitorResource extends Resource
 {
     protected static ?string $model = QueueMonitor::class;
 
-    public static function form(Form $form): Form
+    public static function form(Schema $schema): Schema
     {
-        return $form
+        return $schema
             ->schema([
                 TextInput::make('job_id')
                     ->required()
@@ -75,8 +75,8 @@ class QueueMonitorResource extends Resource
                     ->sortable(),
             ])
             ->defaultSort('started_at', 'desc')
-            ->actions([
-                FilamentTableAction::make('details')
+            ->recordActions([
+                Action::make('details')
                     ->label(__('filament-jobs-monitor::translations.details'))
                     ->icon('heroicon-o-information-circle')
                     ->modalContent(fn (QueueMonitor $queueMonitor) => view('filament-jobs-monitor::queue-monitor-details', [
@@ -86,7 +86,7 @@ class QueueMonitorResource extends Resource
                     ]))
                     ->modalSubmitAction(false),
             ])
-            ->bulkActions([
+            ->toolbarActions([
                 DeleteBulkAction::make(),
             ])
             ->filters([
@@ -97,19 +97,22 @@ class QueueMonitorResource extends Resource
                         'succeeded' => __('filament-jobs-monitor::translations.succeeded'),
                         'failed' => __('filament-jobs-monitor::translations.failed'),
                     ])
-                    ->query(function (Builder $query, array $data) {
-                        if ($data['value'] === 'succeeded') {
+                    ->query(function (Builder $query, $state): Builder {
+                        $value = $state['value'];
+                        if ($value === 'succeeded') {
                             return $query
                                 ->whereNotNull('finished_at')
                                 ->where('failed', 0);
-                        } elseif ($data['value'] === 'failed') {
+                        } elseif ($value === 'failed') {
                             return $query
                                 ->whereNotNull('finished_at')
                                 ->where('failed', 1);
-                        } elseif ($data['value'] === 'running') {
+                        } elseif ($value === 'running') {
                             return $query
                                 ->whereNull('finished_at');
                         }
+
+                        return $query;
                     }),
             ]);
     }
