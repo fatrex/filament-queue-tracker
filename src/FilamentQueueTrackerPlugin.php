@@ -4,6 +4,7 @@ namespace Fatrex\FilamentQueueTracker;
 
 use Closure;
 use Filament\Contracts\Plugin;
+use Filament\Panel;
 use Filament\Support\Concerns\EvaluatesClosures;
 
 class FilamentQueueTrackerPlugin implements Plugin
